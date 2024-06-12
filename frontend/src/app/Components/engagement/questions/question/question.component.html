@@ -1,0 +1,143 @@
+<div class="card mt-4" style="position: relative; padding:0px; border-radius:8px">
+    <div class="grid">
+        <button pButton style="position:absolute; right:0;padding:9px 37px;top: -70px;" label="Add Contacts"
+            type="button" class="mx-3 submit-btn" (click)="visible = true"></button>
+        <div class="col-12" style="padding:1rem 0 0 0;">
+            <p-table #dt1 [value]="data" [paginator]="true" [rows]="rows" [tableStyle]="{ 'min-width': '50rem' }"
+                responsiveLayout="scroll" [globalFilterFields]="['eventName','address','status','revenue']"
+                [showFirstLastIcon]="false">
+                <ng-template pTemplate="caption">
+                    <div class="flex justify-content-between align-items-center flex-column sm:flex-row">
+                        <span class="p-input-icon-left input-table">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)"
+                                placeholder="Search..." class="w-full filterInput" />
+                        </span>
+                        <button pButton label="Filter" class="p-button-outlined filter-btn" icon="pi pi-filter"
+                            (click)="clear(dt1)">
+                        </button>
+
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="min-width: 12rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Question
+                            </div>
+                        </th>
+                        <th style="min-width: 15rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Description
+                            </div>
+                        </th>
+                        <th style="min-width: 10rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Type
+                            </div>
+                        </th>
+                        <th style="min-width: 10rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Is System
+                            </div>
+                        </th>
+                        <th style="min-width: 10rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Applies To Our Account?
+                            </div>
+                        </th>
+                        <th style="min-width: 10rem">
+                            <div class="flex justify-content-center align-items-center">
+                                No. Of Events Used
+                            </div>
+                        </th>
+                        <th style="min-width: 10rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Active
+                            </div>
+                        </th>
+                        <th style="min-width: 10rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Status
+                            </div>
+                        </th>
+                        <th style="min-width: 10rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Action
+                            </div>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-data>
+                    <tr>
+                        <td>
+                            {{data.question}}
+                        </td>
+                        <td>
+                            {{data.description}}
+                        </td>
+                        <td>
+                            {{data.type}}
+                        </td>
+                        <td>
+                            {{data.isSystem}}
+                        </td>
+                        <td>
+                            {{data.appliesToAccount}}
+                        </td>
+                        <td>
+                            <p-badge [value]="data.NoOfEevntUsed" severity="secondary"></p-badge>
+                        </td>
+                        <td>
+                            <p-inputSwitch [ngModel]="data.active" aria-readonly="true" readonly="true"></p-inputSwitch>
+                        </td>
+                        <td>
+                            <span [ngClass]="data.status">{{data.status}}</span>
+                        </td>
+                        <td>
+                            <button pTooltip="Edit" tooltipPosition="bottom" pButton pRipple type="button"
+                                icon="pi pi-file-edit" class="mx-2 customBtn"></button>
+                            <button pTooltip="Delete" tooltipPosition="bottom" pButton pRipple type="button"
+                                icon="pi pi-trash" class="mx-2 customBtn2"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="paginatorleft">
+                    <!-- <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button> -->
+                </ng-template>
+                <ng-template pTemplate="paginatorright" style="position: relative;">
+                    <span class="mx-1 paginatorSpan">Show Items per page: </span>
+                    <p-dropdown class="paginator-dropdown" [options]="options" [(ngModel)]="rows"></p-dropdown>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+
+
+<p-dialog header="Add Questions" [(visible)]="visible" [modal]="true" [style]="{ width: '70vw' }" [draggable]="false"
+    [resizable]="false">
+    <form action="" [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mt-6">
+        <div class="p-fluid p-formgrid grid">
+            <div class="col-12 lg:col-6 p-fluid p-formgrid grid">
+                <!-- Question -->
+                <div class="field col-12">
+                    <label htmlFor="question">Question</label>
+                    <p-dropdown [options]="question" formControlName="question" appendTo="body"></p-dropdown>
+                </div>
+            </div>
+            <p-divider class="divider" layout="vertical"></p-divider>
+            <div class="col-12 lg:col-6 p-fluid p-formgrid grid">
+                <!-- Custom Question -->
+                <div class="field col-12">
+                    <label htmlFor="customQuestion">Custom Question</label>
+                    <p-dropdown [options]="customQuestion" formControlName="customQuestion" appendTo="body"></p-dropdown>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-content-center w-full mt-5">
+            <button pButton label="Add" type="Submit" class="mx-3 submit-btn add-btn"></button>
+            <button pButton label="Cancel" (click)="onCancel()" type="button" class="mx-3 cancel-btn"></button>
+        </div>
+    </form>
+</p-dialog>

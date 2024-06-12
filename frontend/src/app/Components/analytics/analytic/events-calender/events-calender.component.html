@@ -1,0 +1,51 @@
+<div class="card grid" style="padding: 2rem 1rem 0rem 1rem; margin-left:1rem; margin-top:0.4rem">
+    <p-calendar class="max-w-full" [(ngModel)]="date" [inline]="true">
+    </p-calendar>
+    <span class="p-input-icon-left input-span">
+        <i class="pi pi-search"></i>
+        <input pInputText type="text" placeholder="Search Attendee" class="w-full" />
+        <button pButton label="Filter" class="p-button-outlined filter-btn" icon="pi pi-filter">
+        </button>
+    </span>
+    <ng-container *ngFor="let item of eventList; let last = last">
+        <div class="col-12 grid custom-grid">
+            <div class="col-12 flex justify-content-between align-items-center pb-0">
+                <div class="flex align-items-center justify-content-start">
+                    <p-avatar shape="circle"
+                        image="../../../../assets/layout/images/rest/horizon-church-L8e9l0PXPIU-unsplash.jpg"
+                        styleClass="w-2rem h-2rem mr-3 flex-shrink-0" size="large"></p-avatar>
+                    <span class="event-content">{{item.eventName}}</span>
+                </div>
+                <span [ngClass]="item.status">{{item.status}}</span>
+            </div>
+            <div class="col-12 flex justify-content-between align-items-center pt-0">
+                <div>
+                    <p class="event-header">Date:</p>
+                    <span class="event-content">{{item.date}}</span>
+                </div>
+                <div>
+                    <p class="event-header">Mode:</p>
+                    <span class="event-content">{{item.mode}}</span>
+                </div>
+                <div>
+                    <p class="event-header">Attendees:</p>
+                    <span class="event-content">{{item.attendees}}</span>
+                </div>
+                <div class="flex align-items-center">
+                    <p-avatarGroup styleClass="mt-1">
+                        <p-avatar image=".././../../../assets/layout/images/rest/5.webp" size="large" shape="circle"
+                            [style.z-index]="'4'"></p-avatar>
+                        <p-avatar image=".././../../../assets/layout/images/rest/1.webp" size="large" shape="circle"
+                            [style.z-index]="'3'"></p-avatar>
+                        <p-avatar image=".././../../../assets/layout/images/rest/2.webp" size="large" shape="circle"
+                            [style.z-index]="'2'"></p-avatar>
+                        <p-avatar image=".././../../../assets/layout/images/rest/6.webp" size="large" shape="circle"
+                            [style.z-index]="'1'"></p-avatar>
+                        <p-avatar label="+56" size="large" shape="circle" [style.z-index]="'0'"></p-avatar>
+                    </p-avatarGroup>
+                </div>
+            </div>
+            <div *ngIf="!last" class="last"></div>
+        </div>
+    </ng-container>
+</div>

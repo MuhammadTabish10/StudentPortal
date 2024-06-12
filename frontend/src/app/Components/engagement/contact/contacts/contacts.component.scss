@@ -1,0 +1,437 @@
+.card{
+    min-height: 500px;
+}
+
+
+th, tr td {
+  text-align: center !important;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 11px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  width: fit-content;
+}
+
+.filter-btn {
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: 400 !important;
+  font-size: 14px;
+  height: min-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(77, 20, 191, 0.059);
+}
+
+.filter-btn:hover {
+  background-color: rgba(77, 20, 191, 0.105);
+}
+
+.filter-btn::ng-deep .p-button-label {
+  font-weight: 400 !important;
+}
+
+.customBtn {
+  background-color: transparent !important;
+  border: none !important;
+  color: rgba(0, 149, 255, 1);
+  padding: 0px !important;
+}
+
+.customBtn:hover {
+  color: rgba(0, 149, 255, 0.724);
+}
+.customBtn2 {
+  background-color: transparent !important;
+  border: none !important;
+  color: rgba(248, 113, 113, 1) !important;
+  padding: 0px !important;
+}
+
+.customBtn2:hover {
+  color: rgba(248, 113, 113, 0.824) !important;
+}
+
+.viewBtn{
+background-color: transparent !important;
+  border: none !important;
+  color: rgb(26, 26, 26) !important;
+  padding: 0px !important;
+}
+
+.viewBtn:hover {
+  color: rgba(26, 26, 26, 0.685) !important;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: rgba(78, 20, 191, 1);
+  padding: 11px 30px;
+}
+
+.add-btn {
+  padding: 11px 67px !important;
+}
+
+.cancel-btn:hover {
+  background: rgba(168, 85, 247, 0.04);
+}
+
+.p-button-icon-only {
+  width: 1rem !important;
+}
+
+.customBtn:focus,
+.customBtn2:focus {
+  box-shadow: none !important;
+}
+
+p-badge::ng-deep .p-badge {
+  padding: 0px 13px;
+  font-size: 12px;
+}
+
+label {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(51, 51, 51, 1);
+}
+
+.filterInput {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(130, 134, 140, 1);
+  border: none;
+}
+
+.input-table {
+  width: -webkit-fill-available;
+  padding: 0 20px 0 0;
+}
+
+.Active {
+  display: inline-block;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0 0.5rem;
+  background: rgba(0, 186, 52, 0.1);
+  color: rgba(0, 186, 52, 1);
+  font-size: 13px;
+  font-weight: 400;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.Completed {
+  display: inline-block;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0 0.5rem;
+  background: rgba(69, 140, 246, 0.1);
+  color: rgba(69, 140, 246, 1);
+  font-size: 13px;
+  font-weight: 400;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.Cancelled {
+  display: inline-block;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0 0.5rem;
+  background: rgba(255, 0, 0, 0.1);
+  color: rgba(255, 0, 0, 1);
+  font-size: 13px;
+  font-weight: 400;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+
+p-table::ng-deep .p-datatable .p-datatable-header {
+  padding: 1rem 1rem 7px 1rem;
+  background-color: transparent;
+}
+
+p-table::ng-deep .p-inputtext:enabled:focus {
+  box-shadow: none !important;
+}
+
+.paginatorSpan {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(4, 4, 4, 1);
+}
+
+.paginator-dropdown::ng-deep .p-dropdown .p-dropdown-trigger {
+  background: transparent;
+  color: #6b7280;
+  width: 1rem;
+    margin-right: 4px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: rgba(147, 104, 232, 1);
+  font-size: 8px;
+}
+
+.paginator-dropdown::ng-deep .p-dropdown-label {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 1 1 auto;
+  width: 1%;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  padding: 5px 10px 0 10px;
+  color: rgba(147, 104, 232, 1);
+}
+
+.paginator-dropdown::ng-deep .p-dropdown {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  height: 2rem !important;
+  border-color: rgba(147, 104, 232, 1);
+}
+
+.paginator-dropdown::ng-deep .p-dropdown:not(.p-disabled).p-focus{
+    box-shadow: none !important;
+}
+
+.p-paginator-right-content {
+  margin-left: auto;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+::ng-deep .p-paginator{
+    margin-left: 123px !important;
+}
+
+.p-button-icon-only{
+    width:1rem !important
+}
+
+.customBtn:focus,.customBtn2:focus{
+    box-shadow: none !important;
+}
+
+p-calendar::ng-deep .p-button{
+        color: rgba(78, 20, 191, 1);
+    /* background: rgba(78, 20, 191, 1); */
+    border: 1px solid #d1d5db;
+    border-width: 1px 1px 1px 0px;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background: white;
+}
+
+p-dropdown::ng-deep .p-dropdown .p-dropdown-trigger{
+    color: rgba(78, 20, 191, 1);
+}
+
+
+.customCalender::ng-deep .p-inputtext{
+    border-width: 1px 0px 1px 1px !important;
+}
+
+p-calendar::ng-deep .p-inputtext:enabled:hover + .p-button{
+    border-color: #6366f1 !important;
+}
+
+p-calendar::ng-deep .p-button:hover + p-calendar::ng-deep .p-inputtext{
+    border-color: #6366f1 !important;
+}
+
+p-calendar::ng-deep .p-inputtext:hover{
+    border-color: #6366f1 !important;
+}
+
+p-calendar::ng-deep .p-inputtext:enabled:focus,p-calendar::ng-deep .p-button:enabled:focus{
+    box-shadow: none;
+    border-color: #d1d5db;
+}
+
+
+p-divider::ng-deep .p-divider {
+    margin: 0 !important;
+    color: rgb(221, 221, 221);
+}
+
+label{
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(51, 51, 51, 1);
+}
+
+input{
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.col-12{
+    padding: 1rem 1rem 0 1rem ;
+}
+
+p-dialog::ng-deep .p-dialog .p-dialog-header .p-dialog-title{
+    font-size: 18px;
+    color:rgba(0, 0, 0, 1);
+    font-weight:700
+}
+
+p-dialog::ng-deep .p-dialog .p-dialog-header{
+    border-bottom: 1px solid rgba(237, 242, 246, 1);
+}
+
+p-badge::ng-deep  .p-badge{
+    padding: 0px 13px;
+    font-size: 12px;
+}
+
+.heading{
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    color: rgba(51, 51, 51, 1) !important;
+}
+
+div{
+    height: fit-content;
+}
+
+.grid{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+p-inputSwitch::ng-deep .p-inputswitch .p-inputswitch-slider:before {
+    background: #ffffff;
+    width: 12px;
+    height: 12px;
+    left: 0.25rem;
+        margin-top: -5.65px;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+}
+
+ p-inputswitch.p-element {
+    position: absolute;
+    right: 11px;
+    top: 12px;
+}
+
+input:disabled{
+    background-color: rgba(243, 243, 243, 1);
+}
+
+.hideText{
+    position: absolute;
+    right: 60px;
+    top: 16.5px;
+    color: rgb(0, 0, 0);
+    font-size: 11px !important;
+    font-weight: 400;
+}
+
+p-inputSwitch::ng-deep .p-inputswitch.p-focus .p-inputswitch-slider {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: none;
+}
+
+p-inputSwitch::ng-deep .p-inputswitch {
+    width: 3rem;
+    height: 1.3rem;
+}
+
+p-inputSwitch::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background: rgba(0, 186, 52, 1);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.fileUploadStyle{
+        font-size: 15px;
+    font-weight: 600;
+    color: rgb(78, 20, 191);
+    padding: 30px;
+    border-radius: 4px;
+    border: 2px dotted rgba(78, 20, 191, 1);
+    background-color: rgba(78, 20, 191, 0.1);
+    cursor: pointer;
+}
+
+.fileUploadStyle i{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.fileUploadStyle:hover{
+    background-color: rgba(77, 20, 191, 0.164);
+}
+
+p-image::ng-deep img {
+  object-fit: cover;
+  width: -webkit-fill-available;
+  border-radius: 8px;
+}
+
+p-image::ng-deep .p-image.p-component.p-image-preview-container {
+  width: -webkit-fill-available;
+}
+
+.plusIcon{
+    position: absolute;
+    border: 1.8px solid rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 50%;
+    right: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    background-color: rgb(0, 0, 0);
+}
+
+.plusIcon:hover{
+    background-color: rgba(0, 0, 0, 0.749);
+}
+
+@media (max-width: 992px) {
+  .divider {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1590px) {
+    .card{
+        min-height: 800px;
+    }
+    .fileUploadStyle{
+        font-size: 18px;
+    font-weight: 600;
+    color: rgb(78, 20, 191);
+    padding: 30px;
+    border-radius: 4px;
+    border: 2px dotted rgba(78, 20, 191, 1);
+    background-color: rgba(78, 20, 191, 0.1);
+}
+
+.fileUploadStyle i{
+    font-weight: 500;
+    font-size: 17px;
+}
+}
+

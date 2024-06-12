@@ -1,0 +1,74 @@
+<div class="card mt-4" style="position: relative; padding:0px; border-radius:8px">
+    <div class="grid">
+        <button pButton style="position:absolute; right:0;padding:9px 37px;top: -70px;" label="Add New Class"
+            type="button" class="mx-3 submit-btn" [routerLink]="['/class/create']"
+            routerLinkActive="router-link-active"></button>
+        <div class="col-12">
+            <p-table #dt1 [value]="classes" [paginator]="true" [rows]="rows" [tableStyle]="{ 'min-width': '50rem' }"
+                responsiveLayout="scroll" [globalFilterFields]="['name']"
+                [showFirstLastIcon]="false">
+                <ng-template pTemplate="caption">
+                    <div class="flex justify-content-between align-items-center flex-column sm:flex-row">
+                        <span class="p-input-icon-left input-table">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)"
+                                placeholder="Search..." class="w-full" />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="min-width: 6rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Id
+                            </div>
+                        </th>
+                        <th style="min-width: 8rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Class
+                            </div>
+                        </th>
+                        <th style="min-width: 8rem">
+                            <div class="flex justify-content-center align-items-center">
+                                No. of Students
+                            </div>
+                        </th>
+                        <th style="min-width: 8rem">
+                            <div class="flex justify-content-center align-items-center">
+                                Action
+                            </div>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-data>
+                    <tr>
+                        <td>
+                            {{data?.id}}
+                        </td>
+                        <td>
+                            {{data?.name}}
+                        </td>
+                        <td>
+                            {{data?.students}}
+                        </td>
+                        <td>
+                            <button pTooltip="View" tooltipPosition="bottom" pButton pRipple type="button"
+                                icon="pi pi-eye" class="mx-2 viewBtn" routerLink="{{data.id}}"></button>
+                            <button pTooltip="Edit" tooltipPosition="bottom" pButton pRipple type="button"
+                                icon="pi pi-file-edit" class="mx-2 customBtn"></button>
+                            <button pTooltip="Delete" tooltipPosition="bottom" pButton pRipple type="button"
+                                icon="pi pi-trash" class="mx-2 customBtn2"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="paginatorleft" style="margin-right: 20px;">
+                    <!-- <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button> -->
+                </ng-template>
+                <ng-template pTemplate="paginatorright" style="position: relative;">
+                    <span class="mx-1 paginatorSpan">Show Items per page: </span>
+                    <p-dropdown [options]="options" [(ngModel)]="rows" class="tableDropdown"></p-dropdown>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

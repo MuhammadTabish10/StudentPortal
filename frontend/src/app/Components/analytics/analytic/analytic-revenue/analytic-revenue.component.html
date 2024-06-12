@@ -1,0 +1,41 @@
+<div class="card grid" style="padding: 2rem 1rem 2rem 1rem; margin-left:0rem; margin-top:0.4rem">
+    <div class="col-12 flex justify-content-between align-items-center">
+        <div class="flex justify-content-start align-items-center">
+            <h5 class="mb-0" style="font-weight: 700; font-size:18px;">Revenue</h5>
+            <span class="p-input-icon-left input-span ml-4">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" placeholder="Search Attendee" class="w-full" />
+            </span>
+        </div>
+        <div class="flex justify-content-end align-items-center">
+            <div class="flex justify-content-between align-items-center">
+                <!-- <div class="flex flex-wrap gap-3">
+                    <div class="flex align-items-center">
+                        <p-radioButton name="pizza" value="No of Revenue Targetted" [(ngModel)]="revenue" inputId="No of Revenue Targetted"></p-radioButton>
+                        <label for="No of Revenue Targetted" class="ml-2">No of Revenue Targetted</label>
+                    </div>
+                
+                    <div class="flex align-items-center">
+                        <p-radioButton name="pizza" value="Revenue Received" [(ngModel)]="revenue" inputId="Revenue Received"></p-radioButton>
+                        <label for="Revenue Received" class="ml-2">Revenue Received</label>
+                    </div>
+                </div> -->
+                <div class="flex align-items-center mr-2">
+                    <p-checkbox label="No of Revenue Targetted" name="Revenue" value="No of Revenue Targetted" [(ngModel)]="revenue"></p-checkbox>
+                </div>
+                <div class="flex align-items-center">
+                    <p-checkbox label="Revenue Received" name="Revenue" value="Revenue Received" [(ngModel)]="revenue"></p-checkbox>
+                </div>
+            </div>
+            <div class="flex justify-content-between align-items-center ml-3">
+                <button pButton label="Filter" class="p-button-outlined filter-btn mr-3" icon="pi pi-filter">
+                </button>
+                <p-dropdown [options]="revenueOptions" [(ngModel)]="revenueType"></p-dropdown>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-12" style="padding:0px">
+        <p-chart type="bar" [data]="data" [options]="options"></p-chart>
+    </div>
+</div>

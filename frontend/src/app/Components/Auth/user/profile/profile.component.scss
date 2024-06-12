@@ -1,0 +1,61 @@
+p-avatar::ng-deep .p-avatar.p-avatar-image {
+  border: 20px solid rgba(250, 250, 250, 1);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+input {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+p-divider::ng-deep .p-divider {
+  min-height: 225px !important;
+  margin: 0 !important;
+  color: rgba(221, 221, 221, 1);
+}
+
+.customIcon {
+  position: absolute;
+  margin-top: 193px;
+  background-color: rgb(78, 20, 191);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1.8px solid rgb(78, 20, 191);
+  padding: 5px;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+}
+
+.customIcon:hover {
+  border: 2.4px solid rgb(61, 6, 173);
+}
+
+.submit-btn {
+  width: 200px;
+  border-radius: 48px;
+}
+
+.cancel-btn {
+  width: 200px;
+  background-color: transparent;
+  color: rgba(78, 20, 191, 1);
+  border-radius: 48px;
+}
+
+.cancel-btn:hover {
+  background: rgba(168, 85, 247, 0.04);
+}
+
+@media (max-width: 992px) {
+  .divider {
+    display: none;
+  }
+}

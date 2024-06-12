@@ -1,0 +1,205 @@
+<div class="container" *ngIf="start">
+    <img src=".././../../assets/layout/images/Hallo@3x.png" alt="" width="220px">
+    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ratione voluptates esse.
+        Numquam expedita itaque necessitatibus vel pariatur placeat autem doloremque incidunt eligendi adipisci soluta,
+        officia reiciendis quas vero dolor.</p>
+    <button pButton label="Get Started" (click)="onClick()"></button>
+</div>
+
+<div *ngIf="!start">
+    <div class="card" style="padding: 2rem;">
+        <div class="flex justify-content-between align-items-center">
+            <button pButton label="Back" (click)="onBack()"></button>
+            <button pButton label="Next" (click)="onNext()"></button>
+        </div>
+    </div>
+    <div class="card" style="padding: 2rem;" *ngIf="!start">
+        <ng-container *ngIf="startingNum == 0">
+            <div class="py-4 flex justify-content-between align-items-center">
+                <h3>1. Select Subject</h3>
+                <button class="" pButton label="Add Subject" (click)="subjectDialog = true"></button>
+            </div>
+            <div class="grid">
+                <div class="card col-3 flex justify-content-center align-items-center" *ngFor="let card of subjects"
+                    [class.selected]="card.selected" (click)="toggleSubjectSelection(card)">
+                    <h2 class="m-0">{{ card.name }}</h2>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="startingNum == 1">
+            <div class="py-4 flex justify-content-between align-items-center">
+                <h3>2. Select Class</h3>
+                <button class="" pButton label="Add Class" (click)="classDialog = true"></button>
+            </div>
+            <div class="grid">
+                <div class="card col-4 flex justify-content-between align-items-center" *ngFor="let card of classes"
+                    [class.selected]="card.selected" (click)="toggleClassSelection(card)">
+                    <h2 class="m-0">{{ card.name }}</h2>
+                    <h3 class="m-0">{{card.students}} Students</h3>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="startingNum == 2">
+            <div class="py-4 flex justify-content-between align-items-center">
+                <h3>3. Select Semester Class</h3>
+            </div>
+            <div class="calendar-container">
+                <div class="header-row">
+                    <div class="empty-cell"></div> <!-- Empty cell for alignment -->
+                    <div class="day" *ngFor="let day of days">{{ day }}</div>
+                </div>
+                <div class="numbers-grid">
+                    <div *ngFor="let number of numbers" class="row">
+                        <div class="row-header row-header-first">{{ number }}</div> <!-- Row header -->
+                        <div *ngFor="let day of days" class="number-cell" [class.clicked]="isClicked(day, number)"
+                            (click)="onNumberClick(day, number)">
+                            {{ isClicked(day, number) ? selectedClass?.name : number }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="startingNum == 3">
+            <div class="py-4 flex justify-content-between align-items-center">
+                <h3>4. Settings</h3>
+            </div>
+            <form [formGroup]="settingForm" (ngSubmit)="onAddSubject(subjectForm.value)" class="mt-6">
+                <div class="p-fluid p-formgrid grid">
+                    <div class="col-12 flex align-items-center justify-content-between">
+                        <label class="mr-5" for="eventName">Attendence</label>
+                        <p-inputSwitch formControlName="attendence"></p-inputSwitch>
+                    </div>
+                    <div class="col-12 flex align-items-center justify-content-between">
+                        <label class="mr-5" for="eventName">Excuses</label>
+                        <p-inputSwitch formControlName="excuses"></p-inputSwitch>
+                    </div>
+                    <h3>Classwork</h3>
+                    <div class="col-12 flex align-items-center justify-content-between">
+                        <label class="mr-5" for="eventName">Oral participation</label>
+                        <p-inputSwitch formControlName="oralPaticipation"></p-inputSwitch>
+                    </div>
+                    <div class="col-12 flex align-items-center justify-content-between">
+                        <label class="mr-5" for="eventName">Homework</label>
+                        <p-inputSwitch formControlName="homeWork"></p-inputSwitch>
+                    </div>
+                    <div class="col-12 flex align-items-center justify-content-between">
+                        <label class="mr-5" for="eventName">Quality of HW</label>
+                        <p-inputSwitch formControlName="qyalityOfHw"></p-inputSwitch>
+                    </div>
+                    <div class="col-12 flex align-items-center justify-content-between">
+                        <label class="mr-5" for="eventName">Written repetitions</label>
+                        <p-inputSwitch formControlName="writtenRepetition"></p-inputSwitch>
+                    </div>
+                    <div class="col-12 flex align-items-center justify-content-between">
+                        <label class="mr-5" for="eventName">Oral exercises</label>
+                        <p-inputSwitch formControlName="oralExercise"></p-inputSwitch>
+                    </div>
+                </div>
+            </form>
+        </ng-container>
+        <ng-container *ngIf="startingNum == 4">
+            <div class="py-4 flex justify-content-between align-items-center">
+                <h3>5. WEIGHTING OF GRADES</h3>
+            </div>
+            <div class="card">
+                <div class="mb-3 flex justify-content-between align-items-center">
+                    <h3 class="m-0">Classwork</h3>
+                    <p class="m-0 circle-style">40%</p>
+                </div>
+
+                <div class="ml-3 mb-3 flex justify-content-between align-items-center">
+                    <h4 class="m-0">Written repetitions</h4>
+                    <p class="m-0 circle-style" style="background-color: crimson;">30%</p>
+                </div>
+                <div class="ml-3 mb-3 flex justify-content-between align-items-center">
+                    <h4 class="m-0">Quality of HW</h4>
+                    <p class="m-0 circle-style" style="background-color: chocolate;">20%</p>
+                </div>
+                <div class="mb-3 ml-3 flex justify-content-between align-items-center">
+                    <h4 class="m-0">Homework</h4>
+                    <p class="m-0 circle-style" style="background-color: yellowgreen;">10%</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="mb-3 flex justify-content-between align-items-center">
+                    <h3 class="m-0">Oral exercises</h3>
+                    <p class="m-0 circle-style" style="background-color: rgb(255, 217, 0);">10%</p>
+                </div>
+
+                <div class="ml-3 mb-3 flex justify-content-between align-items-center">
+                    <h4 class="m-0">Classwork</h4>
+                    <p class="m-0 circle-style" style="background-color: rgb(195, 71, 9);">15%</p>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+    <p-dialog header="Add Subject" [modal]="true" [(visible)]="subjectDialog" [style]="{ width: '50rem' }"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+        <form [formGroup]="subjectForm" (ngSubmit)="onAddSubject(subjectForm.value)" class="mt-6">
+            <div class="p-fluid p-formgrid grid">
+                <div class="field col-12">
+                    <label for="eventName">Course Name</label>
+                    <input pInputText id="eventName" type="text" formControlName="courseName" />
+                </div>
+            </div>
+            <div class="flex justify-content-end w-full mt-5">
+                <button #submitButton pButton label="Add" type="Submit" class="mx-3 submit-btn"></button>
+            </div>
+        </form>
+    </p-dialog>
+
+    <p-dialog header="Add Class" [modal]="true" [(visible)]="classDialog" [style]="{ width: '50rem' }"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+        <form [formGroup]="classForm" (ngSubmit)="onAddClass(classForm.value)" class="mt-6">
+            <div class="p-fluid p-formgrid grid">
+                <div class="field col-12">
+                    <label for="eventName">Class Name</label>
+                    <input pInputText id="eventName" type="text" formControlName="className" />
+                </div>
+                <div class="col-12 flex align-items-center justify-content-between">
+                    <label class="mr-5" for="eventName">Import Students</label>
+                    <p-inputSwitch formControlName="importStudents"></p-inputSwitch>
+                </div>
+                <div class="field col-12">
+                    <label for="eventName">From Role Assignment</label>
+                    <p-dropdown [options]="classes" appendTo="body" formControlName="roleAssignment" optionLabel="name"
+                        placeholder="Select Class"
+                        [disabled]="classForm.get('importStudents')?.value == false"></p-dropdown>
+                </div>
+                <div class="col-12 py-4 flex align-items-center justify-content-between">
+                    <label class="mr-5" for="eventName">Import Students</label>
+                    <button pButton type="button" (click)="addInfo()"
+                        style="width: 20px;display: flex; justify-content: center;">
+                        <i class="pi pi-plus"></i>
+                    </button>
+                </div>
+                <div formArrayName="students">
+                    <div *ngFor="let student of studentsArray.controls; let i = index" [formGroupName]="i">
+                        <div class="grid">
+                            <div class="field col-6">
+                                <label for="eventName">First Name</label>
+                                <input pInputText id="eventName" type="text" formControlName="firstname" />
+                            </div>
+                            <div class="field col-6">
+                                <label for="eventName">Last Name</label>
+                                <input pInputText id="eventName" type="text" formControlName="lastname" />
+                            </div>
+                            <div class="field col-6">
+                                <label for="eventName">BirthDate</label>
+                                <input pInputText id="eventName" type="text" formControlName="birthday" />
+                            </div>
+                            <div class="field col-6">
+                                <label for="eventName">Emergency Number</label>
+                                <input pInputText id="eventName" type="text" formControlName="emergencyNumber" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-content-end w-full mt-5">
+                <button #submitButton pButton label="Add" type="Submit" class="mx-3 submit-btn"></button>
+            </div>
+        </form>
+    </p-dialog>
+</div>

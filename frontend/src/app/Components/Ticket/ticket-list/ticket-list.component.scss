@@ -1,0 +1,264 @@
+th, tr td {
+  text-align: center !important;
+}
+
+.submit-btn,.cancel-btn{
+   padding: 11px 20px;
+    border-radius: 30px;
+    font-weight: 400;
+    font-size: 13px;
+    width: fit-content;
+}
+
+.customBtn{
+    background-color: transparent !important;
+    border: none !important;
+    color: rgba(0, 149, 255, 1);
+    padding: 0px !important;
+}
+
+.customBtn:hover{
+    color: rgba(0, 149, 255, 0.724);
+}
+.customBtn2{
+    background-color: transparent !important;
+    border: none !important;
+    color: rgba(248, 113, 113, 1) !important;
+    padding: 0px !important;
+}
+
+.customBtn2:hover{
+    color: rgba(248, 113, 113, 0.824) !important;
+}
+
+.cancel-btn{
+    background-color: transparent;
+    color: rgba(78, 20, 191, 1);
+    padding: 11px 30px;
+}
+
+.add-btn{
+    padding: 11px 67px !important;
+}
+
+.cancel-btn:hover{
+    background: rgba(168, 85, 247, 0.04);
+}
+
+.p-button-icon-only{
+    width:1rem !important
+}
+
+.customBtn:focus,.customBtn2:focus{
+    box-shadow: none !important;
+}
+
+p-calendar::ng-deep .p-button{
+        color: rgba(78, 20, 191, 1);
+    /* background: rgba(78, 20, 191, 1); */
+    border: 1px solid #d1d5db;
+    border-width: 1px 1px 1px 0px;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background: white;
+}
+
+
+
+.customCalender::ng-deep .p-inputtext{
+    border-width: 1px 0px 1px 1px !important;
+}
+
+p-calendar::ng-deep .p-inputtext:enabled:hover + .p-button{
+    border-color: #6366f1 !important;
+}
+
+p-calendar::ng-deep .p-button:hover + p-calendar::ng-deep .p-inputtext{
+    border-color: #6366f1 !important;
+}
+
+p-calendar::ng-deep .p-inputtext:hover{
+    border-color: #6366f1 !important;
+}
+
+p-calendar::ng-deep .p-inputtext:enabled:focus,p-calendar::ng-deep .p-button:enabled:focus{
+    box-shadow: none;
+    border-color: #d1d5db;
+}
+
+
+p-divider::ng-deep .p-divider {
+    margin: 0 !important;
+    color: rgb(221, 221, 221);
+}
+
+label{
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(51, 51, 51, 1);
+}
+
+input{
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.col-12{
+    padding: 1rem 1rem 0 1rem !important;
+}
+
+p-dialog::ng-deep .p-dialog .p-dialog-header .p-dialog-title{
+    font-size: 18px;
+    color:rgba(0, 0, 0, 1);
+    font-weight:700
+}
+
+p-dialog::ng-deep .p-dialog .p-dialog-header{
+    border-bottom: 1px solid rgba(237, 242, 246, 1);
+}
+
+p-badge::ng-deep  .p-badge{
+    padding: 0px 13px;
+    font-size: 12px;
+}
+
+.Active{
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0 0.5rem;
+    background: rgba(0, 186, 52, 0.1);
+    color: rgba(0, 186, 52, 1);
+    font-size: 13px;
+    font-weight: 400;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.Completed{
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0 0.5rem;
+    background: rgba(69, 140, 246, 0.1);
+    color: rgba(69, 140, 246, 1);
+    font-size: 13px;
+    font-weight: 400;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.plusIcon{
+        margin-top: 23px;
+    margin-left: -12px;
+    border: 1.8px dotted rgb(78, 20, 191);
+    padding: 10px;
+    border-radius: 50%;
+    color: rgb(78, 20, 191);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.plusIcon:hover{
+    background-color: rgba(105, 68, 179, 0.094);
+}
+
+.deleteIcon{
+        margin-top: 23px;
+    margin-left: -12px;
+    padding: 13px;
+    background-color: rgba(248, 113, 113, 0.2);
+    border-radius: 50%;
+    color: rgba(248, 113, 113, 1);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.deleteIcon:hover{
+    background-color: rgba(248, 113, 113, 0.42);
+}
+
+.col-5-5{
+    width: 45%;
+    padding: 1rem 1rem 1rem 0;
+}
+
+p-radioButton::ng-deep .p-radiobutton .p-radiobutton-box{
+    width: 16px !important;
+    height: 16px !important;
+    margin-top: 2px;
+}
+
+p-radioButton::ng-deep .p-radiobutton .p-radiobutton-box .p-radiobutton-icon{
+    height: 6px;
+    width: 6px;
+}
+
+
+p-radioButton::ng-deep .p-radiobutton .p-radiobutton-box.p-highlight{
+    background: rgb(78, 20, 191) !important;
+    border-color: rgb(78, 20, 191) !important;
+}
+
+
+.heading{
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    color: rgba(51, 51, 51, 1) !important;
+}
+
+div{
+    height: fit-content;
+}
+
+.grid{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.col-12{
+    padding: 1rem 1rem 0 1rem !important;
+}
+
+.submit-btn,.cancel-btn{
+    padding: 11px 37px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.cancel-btn{
+    background-color: transparent;
+    color: rgba(78, 20, 191, 1);
+}
+
+.cancel-btn:hover{
+    background: rgba(168, 85, 247, 0.04);
+}
+
+label{
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(51, 51, 51, 1);
+}
+
+input{
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+}
+
+
+@media (max-width: 992px) {
+  .divider {
+    display: none;
+  }
+}

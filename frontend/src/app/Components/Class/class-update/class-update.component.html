@@ -1,0 +1,59 @@
+<div style="position: relative;">
+    <button pButton style="position:absolute; right:0;padding:9px 37px;top: -46px;" label="Back" type="button"
+        class="mx-3 cancel-btn" [routerLink]="['/class']" routerLinkActive="router-link-active"></button>
+    <div class="card" style="padding: 2rem 0;">
+        <form action="" [formGroup]="classForm" (ngSubmit)="onSubmit(classForm?.value)" class="mt-6">
+            <div class="p-fluid p-formgrid grid">
+                <div class="field col-12">
+                    <label for="eventName">Class Name</label>
+                    <input pInputText id="eventName" type="text" formControlName="className" />
+                </div>
+                <div class="col-12 flex align-items-center justify-content-between">
+                    <label class="mr-5" for="eventName">Import Students</label>
+                    <p-inputSwitch formControlName="importStudents"></p-inputSwitch>
+                </div>
+                <div class="field col-12">
+                    <label for="eventName">From Role Assignment</label>
+                    <p-dropdown [options]="classes" appendTo="body" formControlName="roleAssignment" optionLabel="name"
+                        placeholder="Select Class"
+                        [disabled]="classForm.get('importStudents')?.value == false"></p-dropdown>
+                </div>
+                <div class="col-12 py-4 flex align-items-center justify-content-between">
+                    <label class="mr-5" for="eventName">Import Students</label>
+                    <button pButton type="button" (click)="addInfo()"
+                        style="width: 20px;display: flex; justify-content: center;">
+                        <i class="pi pi-plus"></i>
+                    </button>
+                </div>
+                <div formArrayName="students">
+                    <div *ngFor="let student of studentsArray.controls; let i = index" [formGroupName]="i">
+                        <div class="grid">
+                            <div class="field col-6">
+                                <label for="eventName">First Name</label>
+                                <input pInputText id="eventName" type="text" formControlName="firstname" />
+                            </div>
+                            <div class="field col-6">
+                                <label for="eventName">Last Name</label>
+                                <input pInputText id="eventName" type="text" formControlName="lastname" />
+                            </div>
+                            <div class="field col-6">
+                                <label for="eventName">BirthDate</label>
+                                <input pInputText id="eventName" type="text" formControlName="birthday" />
+                            </div>
+                            <div class="field col-6">
+                                <label for="eventName">Emergency Number</label>
+                                <input pInputText id="eventName" type="text" formControlName="emergencyNumber" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-content-end w-full mt-5">
+                    <button #submitButton pButton label="Add" type="Submit" class="mx-3 submit-btn"></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>

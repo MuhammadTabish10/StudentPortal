@@ -1,0 +1,46 @@
+<div class="flex h-screen" style="background-color: white;">
+    <div class="w-6">
+        <app-login-design></app-login-design>
+    </div>
+    <div class="w-full lg:w-6 h-full text-center px-6 py-6 flex flex-column justify-content-center">
+        <div class="flex flex-column align-items-center gap-4">
+            <img src="../../../../assets/layout/images/logo/Frame 8733.jpg" alt="" width="206.66px" height="auto">
+            <div class="mb-2 mt-1 form">
+                <h2>Code Verification</h2>
+                <p>To reset your password, please enter your code you received in e-mail.</p>
+            </div>
+            <form [formGroup]="verifyForm" (ngSubmit)="onVerify(verifyForm.value)"
+                class="flex flex-column align-items-center gap-4">
+                <!-- Username Email -->
+                <div style="text-align: left;">
+                    <p class="label" for="email">4 Digit Code</p>
+                    <div class="flex justify-content-between w-full align-items-center mb-2 gap-3">
+                        <input #input1 formControlName="input1" pinputtext="" pkeyfilter="num" maxlength="1"
+                            class="p-inputtext p-component p-element w-7rem text-center ng-untouched ng-pristine ng-valid p-filled"
+                            (input)="onInput(input1, input2, null, null)">
+                        <input #input2 formControlName="input2" pinputtext="" pkeyfilter="num" maxlength="1"
+                            class="p-inputtext p-component p-element w-7rem text-center ng-untouched ng-pristine ng-valid p-filled"
+                            (input)="onInput(input2, input3, input1, input2)">
+                        <input #input3 formControlName="input3" pinputtext="" pkeyfilter="num" maxlength="1"
+                            class="p-inputtext p-component p-element w-7rem text-center ng-untouched ng-pristine ng-valid p-filled"
+                            (input)="onInput(input3, input4, input2, input3)">
+                        <input #input4 formControlName="input4" pinputtext="" pkeyfilter="num" maxlength="1"
+                            class="p-inputtext p-component p-element w-7rem text-center ng-untouched ng-pristine ng-valid p-filled"
+                            (input)="onInput(input4, null, input3, input4)">
+                    </div>
+                </div>
+                <div class="flex justify-content-between">
+                    <button pbutton label="LOGIN" type="button" class="p-element w-10rem p-button p-component cancelBtn"
+                        severity="help"><span class="p-button-label">Cancel</span></button>
+                    <button pbutton label="LOGIN" type="submit"
+                        class="p-element w-10rem p-button p-component loginBtn"><span
+                            class="p-button-label">Continue</span></button>
+                </div>
+            </form>
+        </div>
+        <p class="mt-3 otp"><span>Resend OTP</span> (30s)</p>
+    </div>
+
+</div>
+
+<p-toast></p-toast>

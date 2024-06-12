@@ -1,0 +1,175 @@
+<div class="grid">
+    <div class="col-12">
+        <p-table [value]="data" [tableStyle]="{ 'min-width': '50rem' }" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Code Name
+                        </div>
+                    </th>
+                    <th style="min-width: 16rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Description
+                        </div>
+                    </th>
+                    <th style="min-width: 12rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Is $ or %
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            No. of Reg
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Standard Revenue
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Revenue
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Check In
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Status
+                        </div>
+                    </th>
+                    <th style="min-width: 8rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Action
+                        </div>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-data>
+                <tr>
+                    <td>
+                        {{data.codeName}}
+                    </td>
+                    <td>
+                        {{data.description}}
+                    </td>
+                    <td>
+                        {{data.inDollarOrPercent}}
+                    </td>
+                    <td>
+                        <p-badge [value]="data.noOfReg" severity="secondary"></p-badge>
+                    </td>
+                    <td style="color: rgba(155, 109, 80, 1);">
+                        {{data.standardRevenue}}
+                    </td>
+                    <td style="color: rgba(0, 186, 52, 1);">
+                        {{data.revenue}}
+                    </td>
+                    <td>
+                        <p-badge [value]="data.checkIn" severity="secondary"></p-badge>
+                    </td>
+                    <td>
+                        <span [ngClass]="data.status">{{data.status}}</span>
+                    </td>
+                    <td>
+                        <button pTooltip="Edit" tooltipPosition="bottom" pButton pRipple type="button"
+                            icon="pi pi-file-edit" class="mx-2 customBtn"></button>
+                        <button pTooltip="Delete" tooltipPosition="bottom" pButton pRipple type="button"
+                            icon="pi pi-trash" class="mx-2 customBtn2"></button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+
+<p-dialog header="Add New Discount" [(visible)]="visible" [modal]="true" [style]="{ width: '70vw' }" [draggable]="false"
+    [resizable]="false">
+    <form action="" [formGroup]="discountForm" (ngSubmit)="onSubmit()" class="mt-6">
+        <div class="p-fluid p-formgrid grid">
+            <div class="col-12 lg:col-6 p-fluid p-formgrid grid">
+                <!--Code Name -->
+                <div class="field col-12 ">
+                    <label htmlFor="codeName">Code Name</label>
+                    <input pInputText id="codeName" type="text" formControlName="codeName" />
+                </div>
+                <!-- Description -->
+                <div class="field col-12">
+                    <label htmlFor="description">Description</label>
+                    <input pInputText id="description" type="text" formControlName="description" />
+                </div>
+                <!--Is it % or $? -->
+                <div class="field col-6">
+                    <label htmlFor="symbol">Is it % or $?</label>
+                    <p-dropdown [options]="symbol" formControlName="symbol" appendTo="body"></p-dropdown>
+                </div>
+                <!--Enter Value -->
+                <div class="field col-6">
+                    <label htmlFor="value">Enter Value</label>
+                    <input pInputText id="value" type="text" formControlName="value" />
+                </div>
+                <!-- Applies To -->
+                <div class="field col-12">
+                    <label htmlFor="appliesTo">Applies To</label>
+                    <p-multiSelect [options]="appliesTo" formControlName="appliesTo" display="chip"
+                        [showClear]="true" appendTo="body"></p-multiSelect>
+                </div>
+            </div>
+            <p-divider class="divider" layout="vertical"></p-divider>
+            <div class="col-12 lg:col-6 p-fluid p-formgrid grid">
+                <!-- Status -->
+                <div class="field col-12">
+                    <label htmlFor="status">Status</label>
+                    <p-dropdown [options]="status" formControlName="status" appendTo="body"></p-dropdown>
+                </div>
+                <!--Minimum Tickets -->
+                <div class="field col-12 lg:col-6">
+                    <label htmlFor="minimumTickets">Minimum Tickets</label>
+                    <input pInputText id="minimumTickets" type="text" formControlName="minimumTickets" />
+                </div>
+                <!--Maximum Tickets -->
+                <div class="field col-12 lg:col-6">
+                    <label htmlFor="maximumTickets">Maximum Tickets</label>
+                    <input pInputText id="maximumTickets" type="text" formControlName="maximumTickets" />
+                </div>
+                <div class="field col-12 m-0">
+                    <label class="heading m-0">Dates</label>
+                </div>
+                <div class="p-fluid p-formgrid grid col-12"
+                    *ngFor="let datePair of datePairsArray.controls; let i = index">
+                    <div class="field col-5-5">
+                        <label for="{{ 'fromDate-' + i }}">From Date</label>
+                        <p-calendar dateFormat="yy-mm-dd" [showIcon]="true" class="customCalender"
+                            [formControl]="datePair.get('fromDate')" appendTo="body"></p-calendar>
+                    </div>
+
+                    <div class="field col-5-5">
+                        <label for="{{ 'toDate-' + i }}">To Date</label>
+                        <p-calendar dateFormat="yy-mm-dd" [showIcon]="true" class="customCalender"
+                            [formControl]="datePair.get('toDate')" appendTo="body"></p-calendar>
+                    </div>
+                    <ng-container *ngIf="i > 0">
+                        <div class="field col-1">
+                            <i class="pi pi-trash deleteIcon" (click)="removeDatePair(i)"></i>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="i == 0">
+                        <div class="field col-1">
+                            <i class="pi pi-plus plusIcon" (click)="addDatePair()"></i>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-content-center w-full mt-5">
+            <button pButton label="Add" type="Submit" class="mx-3 submit-btn add-btn"></button>
+            <button pButton label="Cancel" (click)="onCancel()" type="button" class="mx-3 cancel-btn"></button>
+        </div>
+    </form>
+</p-dialog>

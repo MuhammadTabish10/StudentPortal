@@ -1,0 +1,51 @@
+<div class="card">
+
+    <div class="p-fluid p-formgrid grid custom-modal">
+
+        <div class="col-12 lg:col-3 mt-3">
+            <div class="flex justify-content-center customDiv">
+                <p-avatar shape="circle"
+                    image="../../../../../assets/layout/images/profile/93d03012-0059-46d6-b61f-43e13e0eb77f.jpeg"
+                    styleClass="w-16rem h-16rem flex-shrink-0 customA customB" size="xlarge"></p-avatar>
+                    <i class="pi pi-camera customIcon"></i>
+            </div>
+        </div>
+        <form class="grid formgrid p-fluid col-12 lg:col-9" [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+            <div class="col-12 lg:col-6">
+                <!--First Name -->
+                <div class="field col-12 ">
+                    <label htmlFor="firstname">First Name</label>
+                    <input #inputField pInputText id="firstname" type="text" formControlName="firstname" />
+                </div>
+                <!-- Phone -->
+                <div class="field col-12">
+                    <label htmlFor="phone">Phone Number</label>
+                    <input pInputText id="phone" type="text" formControlName="phone" />
+                </div>
+                <!-- Employee Id -->
+                <div class="field col-12">
+                    <label htmlFor="phone">Company</label>
+                    <input pInputText id="company" type="text" formControlName="company" />
+                </div>
+            </div>
+            <p-divider class="divider" layout="vertical"></p-divider>
+            <div class="col-12 lg:col-6">
+                <!--Last Name -->
+                <div class="field col-12 ">
+                    <label htmlFor="lastname">Last Name</label>
+                    <input pInputText id="lastname" type="text" formControlName="lastname" />
+                </div>
+                <!-- Email -->
+                <div class="field col-12">
+                    <label htmlFor="email">Email Address</label>
+                    <input pInputText id="email" type="email" formControlName="email" />
+                </div>
+
+            </div>
+            <div class="flex justify-content-center w-full col-12 mt-4">
+                <button pButton type="Submit" label="Save Details" class="mx-3 submit-btn "></button>
+                <button pButton type="button" label="Cancel" class="mx-3 cancel-btn "></button>
+            </div>
+        </form>
+    </div>
+</div>

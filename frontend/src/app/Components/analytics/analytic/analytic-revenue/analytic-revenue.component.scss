@@ -1,0 +1,79 @@
+input {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 88px;
+  background-color: rgba(247, 247, 247, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  border: none;
+}
+
+.filter-btn {
+  border-radius: 30px;
+  font-weight: 400 !important;
+  font-size: 14px;
+  height: min-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: rgba(78, 20, 191, 1);
+  background-color: rgba(77, 20, 191, 0.059);
+   border-color: rgba(78, 20, 191, 1);
+}
+
+.filter-btn:hover {
+  background-color: rgba(77, 20, 191, 0.105);
+}
+
+p-dropdown::ng-deep .p-dropdown .p-dropdown-trigger {
+  background: transparent;
+  color: rgba(78, 20, 191, 1);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+p-dropdown::ng-deep .p-dropdown-label {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 1 1 auto;
+  width: 1%;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  font-weight: 700;
+  color: rgba(78, 20, 191, 1);
+}
+
+p-dropdown::ng-deep .p-dropdown {
+    border-color: rgb(78, 20, 191);
+    border-radius: 30px;
+}
+
+p-dropdown::ng-deep .p-dropdown:hover {
+  background-color: rgba(77, 20, 191, 0.105);
+}
+
+p-dropdown::ng-deep .p-dropdown:not(.p-disabled).p-focus{
+    box-shadow: none !important;
+}
+
+p-checkbox::ng-deep .p-checkbox .p-checkbox-box {
+    border: 2px solid #d1d5db;
+    background: #ffffff;
+    width: 20px;
+    height: 20px;
+    color: #4b5563;
+    border-radius: 3px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+p-checkbox::ng-deep .p-checkbox .p-checkbox-box .p-checkbox-icon {
+    transition-duration: 0.2s;
+    color: transparent;
+    font-size: 14px;
+}
+
+p-checkbox::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: rgba(78, 20, 191, 1);
+    background: rgba(78, 20, 191, 1);
+}

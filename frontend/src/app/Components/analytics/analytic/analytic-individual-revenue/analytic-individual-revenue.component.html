@@ -1,0 +1,27 @@
+<div class="card card-scroll" style="max-height:500px; min-height:500px;  overflow: auto; padding:1rem">
+    <div class="flex justify-content-between align-items-center" style="padding:1rem 2rem">
+        <h5 class="mb-0" style="font-weight: 700; font-size:18px;">Individual Event Revenue</h5>
+        <i class="pi pi-ellipsis-h" style="font-size: 24px; cursor:pointer;"></i>
+    </div>
+    <div class="px-3">
+        <p-chart type="doughnut" [data]="donutChartData" [options]="donutChartOption"></p-chart>
+    </div>
+    <div class="flex justify-content-between align-items-center" style="padding: 1rem 1rem;">
+        <div>
+            <div class="flex align-items-center justify-content-start"
+                *ngFor="let item of donutChartData.labels; let i = index">
+                <p-checkbox [(ngModel)]="checked" [binary]="true" inputId="binary"
+                    [ngStyle]="{ 'background-color': donutChartData.datasets[0].backgroundColor[i] }"
+                    readonly="true"></p-checkbox>
+                <p class="ml-2"> {{item}}</p>
+            </div>
+
+        </div>
+        <div>
+            <div class="flex align-items-center justify-content-start"
+                *ngFor="let item of donutChartData.datasets[0].data">
+                <p>{{'$' + item}}</p>
+            </div>
+        </div>
+    </div>
+</div>

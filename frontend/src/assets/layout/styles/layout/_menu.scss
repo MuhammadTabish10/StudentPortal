@@ -1,0 +1,209 @@
+.layout-sidebar {
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  z-index: 999;
+  overflow-y: auto;
+  user-select: none;
+  top: 0rem;
+  left: 0rem;
+  transition: transform $transitionDuration, left $transitionDuration;
+  background-color: var(--surface-overlay);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.02), 0px 0px 2px rgba(0, 0, 0, 0.05),
+    0px 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.line-container {
+  position: absolute;
+  left: 0;
+  top: 76px;
+  width: 330px;
+  height: 1px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #d1d5db 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  /* Inside auto layout */
+  flex: none;
+  order: 13;
+  flex-grow: 0;
+  box-shadow: 0px 0px 18px 6px rgba(0, 0, 0, 0.03);
+}
+
+.layout-sidebar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.layout-sidebar:hover::-webkit-scrollbar {
+  width: 2px;
+}
+
+.layout-sidebar::-webkit-scrollbar-thumb {
+  background-color: #4d14bf2d;
+  height: 10px;
+}
+
+.layout-sidebar::-webkit-scrollbar-track {
+  background-color: #ffffff43;
+}
+
+.layout-menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  .layout-root-menuitem {
+    > .layout-menuitem-root-text {
+      font-size: 0.857rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--surface-900);
+      margin: 0.75rem 0;
+    }
+
+    > a {
+      display: none;
+    }
+  }
+
+  a {
+    user-select: none;
+
+    &.active-menuitem {
+      > .layout-submenu-toggler {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  li.active-menuitem {
+    > a {
+      .layout-submenu-toggler {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    a {
+      font-size: 16px;
+      font-weight: 400;
+      font-family: "Inter", sans-serif;
+      line-height: 19.36px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      outline: 0 none;
+      color: var(--text-color);
+      cursor: pointer;
+      padding: 30px 40px 30px 40px;
+      // border-radius: $borderRadius;
+      transition: background-color $transitionDuration,
+        box-shadow $transitionDuration;
+
+      .layout-menuitem-icon {
+        margin-right: 1.5rem;
+        font-size: 1.4rem;
+      }
+
+      .layout-submenu-toggler {
+        font-size: 75%;
+        margin-left: auto;
+        transition: transform $transitionDuration;
+      }
+
+      &.active-route {
+        font-weight: 700;
+        color: white;
+        background: rgba(78, 20, 191, 1);
+      }
+
+      &:hover {
+        // background-color: var(--surface-hover);
+        background-color: rgba(78, 20, 191, 0.1);
+        font-weight: 400;
+        color: var(--text-color);
+      }
+    }
+
+    .menu-separator {
+      width: 330px;
+      height: 2px;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        #d1d5db 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      /* Inside auto layout */
+      flex: none;
+      order: 5;
+      flex-grow: 0;
+    }
+
+    .menu-separator.hide{
+        display: none;
+    }
+
+    // .custom:focus-within {
+    //   font-weight: 700;
+    //   color: white;
+    //   background: rgba(78, 20, 191, 1);
+    // }
+
+    ul {
+      .custom-submenu {
+        &.active-route {
+          background-color: rgba(78, 20, 191, 0.1) !important;
+          font-weight: 400 !important;
+          color: var(--text-color) !important;
+        }
+      }
+    }
+
+    ul {
+      overflow: hidden;
+      // border-radius: $borderRadius;
+
+      li {
+        a {
+          margin-left: 1rem;
+        }
+
+        li {
+          a {
+            margin-left: 2rem;
+          }
+
+          li {
+            a {
+              margin-left: 2.5rem;
+            }
+
+            li {
+              a {
+                margin-left: 3rem;
+              }
+
+              li {
+                a {
+                  margin-left: 3.5rem;
+                }
+
+                li {
+                  a {
+                    margin-left: 4rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

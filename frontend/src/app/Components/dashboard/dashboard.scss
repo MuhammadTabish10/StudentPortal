@@ -1,0 +1,344 @@
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container * {
+  margin: 30px 0;
+}
+
+.custom-tabmenu-nav {
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(78, 20, 191) !important;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 20px;
+  outline: 0;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  flex-wrap: nowrap;
+}
+
+.p-tabmenu-nav-content {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior: contain auto;
+}
+
+.firstItem {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  //   border-right: 1px solid rgba(78, 20, 191, 1);
+}
+
+.lastItem {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  //   border-left: 1px solid rgba(78, 20, 191, 1);
+}
+
+.restItem {
+  border: 1px solid rgba(78, 20, 191, 1);
+}
+
+.p-tabmenuitem {
+  padding: 7px 0px !important;
+}
+
+.p-menuitem-link {
+  color: rgba(102, 102, 102, 1);
+  cursor: pointer !important;
+  font-weight: 400;
+  font-size: 14px !important;
+  line-height: 20px;
+  padding: 9px 18px !important;
+}
+
+.p-highlight {
+  background-color: rgba(78, 20, 191, 1);
+  color: rgba(255, 255, 255, 1);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.plusIcon {
+  margin-top: 23px;
+  margin-left: 2px;
+  border: 1.8px dotted rgb(78, 20, 191);
+  padding: 10px;
+  border-radius: 50%;
+  color: rgb(78, 20, 191);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.plusIcon:hover {
+  background-color: rgba(105, 68, 179, 0.094);
+}
+
+.deleteIcon {
+  margin-top: 23px;
+  margin-left: 2px;
+  padding: 13px;
+  background-color: rgba(248, 113, 113, 0.2);
+  border-radius: 50%;
+  color: rgba(248, 113, 113, 1);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.deleteIcon:hover {
+  background-color: rgba(248, 113, 113, 0.42);
+}
+
+p-radioButton::ng-deep .p-radiobutton .p-radiobutton-box {
+  width: 16px !important;
+  height: 16px !important;
+  margin-top: 2px;
+}
+
+p-radioButton::ng-deep .p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+  height: 6px;
+  width: 6px;
+}
+
+p-radioButton::ng-deep .p-radiobutton .p-radiobutton-box.p-highlight {
+  background: rgb(78, 20, 191) !important;
+  border-color: rgb(78, 20, 191) !important;
+}
+
+p-divider::ng-deep .p-divider {
+  margin: 0 !important;
+  color: rgba(221, 221, 221, 1);
+}
+
+.heading {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: rgba(51, 51, 51, 1) !important;
+}
+
+div {
+  height: fit-content;
+}
+
+.grid {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.col-12 {
+  padding: 1rem 1rem 0 1rem;
+}
+
+p-calendar::ng-deep .p-button {
+  color: rgba(78, 20, 191, 1);
+  /* background: rgba(78, 20, 191, 1); */
+  border: 1px solid #d1d5db;
+  border-width: 1px 1px 1px 0px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: white;
+}
+
+.customCalender::ng-deep .p-inputtext {
+  border-width: 1px 0px 1px 1px !important;
+}
+
+p-calendar::ng-deep .p-inputtext:enabled:hover + .p-button {
+  border-color: #6366f1 !important;
+}
+
+p-calendar::ng-deep .p-button:hover + p-calendar::ng-deep .p-inputtext {
+  border-color: #6366f1 !important;
+}
+
+p-calendar::ng-deep .p-inputtext:hover {
+  border-color: #6366f1 !important;
+}
+
+p-calendar::ng-deep .p-inputtext:enabled:focus,
+p-calendar::ng-deep .p-button:enabled:focus {
+  box-shadow: none;
+  border-color: #d1d5db;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 11px 37px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: rgba(78, 20, 191, 1);
+}
+
+.cancel-btn:hover {
+  background: rgba(168, 85, 247, 0.04);
+}
+
+label {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(51, 51, 51, 1);
+}
+
+input {
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+}
+
+
+input:disabled {
+  background-color: rgba(243, 243, 243, 1);
+}
+
+.hideText {
+  position: absolute;
+  right: 60px;
+  top: 16.5px;
+  color: rgb(0, 0, 0);
+  font-size: 11px !important;
+  font-weight: 400;
+}
+
+label{
+    font-size: 15px !important;
+    font-weight: 700 !important;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.card.selected {
+  border-color: balck;
+  background-color: #ff8000;
+  color: #ffffff;
+}
+
+.card.selected h2{
+    color: #ffffff;
+}
+
+@media (max-width: 992px) {
+  .divider {
+    display: none;
+  }
+}
+
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-row {
+  display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.empty-cell {
+  width: 70px; /* Same width as row headers for alignment */
+}
+
+.day {
+      width: 13px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.row-header-first{
+      width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  background-color: #cfcfcf;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.circle-style{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(181, 49, 49);
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.numbers-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.row-header {
+  width: 70px; /* Ensures the row header has the same width as day columns */
+  text-align: center;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.number-cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.number-cell:hover {
+  background-color: #f0f0f0;
+}
+
+.number-cell.clicked {
+  background-color: #d0d0d0;
+  color: red;
+}
+
+

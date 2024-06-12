@@ -1,0 +1,245 @@
+<div class="grid">
+    <div class="col-12">
+        <p-table [value]="data" [tableStyle]="{ 'min-width': '50rem' }" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Ticket Type
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Price
+                        </div>
+                    </th>
+                    <th style="min-width: 12rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Is Add-on
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Type
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            No. of Reg
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Revenue
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Check In
+                        </div>
+                    </th>
+                    <th style="min-width: 10rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Status
+                        </div>
+                    </th>
+                    <th style="min-width: 8rem">
+                        <div class="flex justify-content-center align-items-center">
+                            Action
+                        </div>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-data>
+                <tr>
+                    <td>
+                        {{data.ticketType}}
+                    </td>
+                    <td>
+                        {{data.price}}
+                    </td>
+                    <td>
+                        {{data.isAddOn}}
+                    </td>
+                    <td>
+                        {{data.type}}
+                    </td>
+                    <td>
+                        <p-badge [value]="data.noOfReg" severity="secondary"></p-badge>
+                    </td>
+                    <td style="color: rgba(0, 186, 52, 1);">
+                        {{data.revenue}}
+                    </td>
+                    <td>
+                        <p-badge [value]="data.checkIn" severity="secondary"></p-badge>
+                    </td>
+                    <td>
+                        <span [ngClass]="data.status">{{data.status}}</span>
+                    </td>
+                    <td>
+                        <button pTooltip="Edit" tooltipPosition="bottom" pButton pRipple type="button"
+                            icon="pi pi-file-edit" class="mx-2 customBtn"></button>
+                        <button pTooltip="Delete" tooltipPosition="bottom" pButton pRipple type="button"
+                            icon="pi pi-trash" class="mx-2 customBtn2"></button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+
+<p-dialog header="Add New Ticket"  [(visible)]="visible" [modal]="true" [style]="{ width: '70vw' }"
+    [draggable]="false" [resizable]="false">
+    <form action="" [formGroup]="ticketForm" (ngSubmit)="onSubmit()" class="mt-6">
+        <div class="p-fluid p-formgrid grid">
+            <div class="col-12 lg:col-6 p-fluid p-formgrid grid">
+                <!--Ticket Name -->
+                <div class="field col-12 ">
+                    <label htmlFor="ticketName">Ticket Name</label>
+                    <input pInputText id="ticketName" type="text" formControlName="ticketName" />
+                </div>
+                <!-- Ticket Type -->
+                <div class="field col-12">
+                    <label htmlFor="ticketType">Ticket Type</label>
+                    <p-dropdown [options]="ticketType" formControlName="ticketType" appendTo="body"></p-dropdown>
+                </div>
+                <!-- Description -->
+                <div class="field col-12">
+                    <label htmlFor="description">Description</label>
+                    <input pInputText id="description" type="text" formControlName="description" />
+                </div>
+                <!--Is Table? -->
+                <div class="field col-12">
+                    <div class="flex justify-content-between align-items-center">
+                        <label htmlFor="isTable">Is Table?</label>
+                        <div class="flex" style="margin-top: 10px;">
+                            <div class="field-radiobutton mr-4">
+                                <p-radioButton name="isTable" value="Yes" formControlName="isTable"></p-radioButton>
+                                <label for="Yes">Yes</label>
+                            </div>
+                            <div class="field-radiobutton">
+                                <p-radioButton name="isTable" value="No" formControlName="isTable"></p-radioButton>
+                                <label for="No">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Max Seats -->
+                <div class="field col-12 ">
+                    <label htmlFor="maxSeats">Max Seats</label>
+                    <input pInputText id="maxSeats" type="text" formControlName="maxSeats" />
+                </div>
+                <!--Ticket Price -->
+                <div class="field col-12 ">
+                    <label htmlFor="ticketPrice">Ticket Price</label>
+                    <input pInputText id="ticketPrice" type="text" formControlName="ticketPrice" />
+                </div>
+                <!--Ticket Fee - Pass to Customer -->
+                <div class="field col-12">
+                    <div class="flex justify-content-between align-items-center">
+                        <label htmlFor="ticketFeePassToCustomer">Ticket Fee - Pass to Customer</label>
+                        <div class="flex" style="margin-top: 10px;">
+                            <div class="field-radiobutton mr-4">
+                                <p-radioButton name="ticketFeePassToCustomer" value="Yes"
+                                    formControlName="ticketFeePassToCustomer"></p-radioButton>
+                                <label for="Yes">Yes</label>
+                            </div>
+                            <div class="field-radiobutton">
+                                <p-radioButton name="ticketFeePassToCustomer" value="No"
+                                    formControlName="ticketFeePassToCustomer"></p-radioButton>
+                                <label for="No">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Enter Fee -->
+                <div class="field col-12 ">
+                    <label htmlFor="enterFee">Enter Fee</label>
+                    <input pInputText id="enterFee" type="text" formControlName="enterFee" />
+                </div>
+                <!--Final Price -->
+                <div class="field col-12 ">
+                    <label htmlFor="finalPrice">Final Price</label>
+                    <input pInputText id="finalPrice" type="text" formControlName="finalPrice" />
+                </div>
+            </div>
+            <p-divider class="divider" layout="vertical"></p-divider>
+            <div class="col-12 lg:col-6 p-fluid p-formgrid grid">
+                <!-- Status -->
+                <div class="field col-12">
+                    <label htmlFor="status">Status</label>
+                    <p-dropdown [options]="status" formControlName="status" appendTo="body"></p-dropdown>
+                </div>
+                <!--Is Add On? -->
+                <div class="field col-12">
+                    <div class="flex justify-content-between align-items-center">
+                        <label htmlFor="isAddOn">Is Add On?</label>
+                        <div class="flex" style="margin-top: 10px;">
+                            <div class="field-radiobutton mr-4">
+                                <p-radioButton name="isAddOn" value="Yes" formControlName="isAddOn"></p-radioButton>
+                                <label for="Yes">Yes</label>
+                            </div>
+                            <div class="field-radiobutton">
+                                <p-radioButton name="isAddOn" value="No" formControlName="isAddOn"></p-radioButton>
+                                <label for="No">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Future Events -->
+                <div class="field col-12">
+                    <label htmlFor="status">Future Events</label>
+                    <p-multiSelect [options]="futureEvents" formControlName="futureEvents" display="chip"
+                        [showClear]="true" appendTo="body"></p-multiSelect>
+                </div>
+                <!--Minimum Quantity -->
+                <div class="field col-12 lg:col-6">
+                    <label htmlFor="minimumQuantity">Minimum Quantity</label>
+                    <input pInputText id="minimumQuantity" type="text" formControlName="minimumQuantity" />
+                </div>
+                <!--Maximum Quantity -->
+                <div class="field col-12 lg:col-6">
+                    <label htmlFor="maximumQuantity">Maximum Quantity</label>
+                    <input pInputText id="maximumQuantity" type="text" formControlName="maximumQuantity" />
+                </div>
+                <!--Max Tickets -->
+                <div class="field col-12">
+                    <label htmlFor="maxTickets">Max Tickets</label>
+                    <input pInputText id="maxTickets" type="text" formControlName="maxTickets" />
+                </div>
+                <div class="field col-12 m-0">
+                    <label class="heading m-0">Dates</label>
+                </div>
+                <div class="p-fluid p-formgrid grid col-12"
+                    *ngFor="let datePair of datePairsArray.controls; let i = index">
+                    <div class="field col-5-5">
+                        <label for="{{ 'fromDate-' + i }}">From Date</label>
+                        <p-calendar dateFormat="yy-mm-dd" [showIcon]="true" class="customCalender"
+                            [formControl]="datePair.get('fromDate')" appendTo="body"></p-calendar>
+                    </div>
+
+                    <div class="field col-5-5">
+                        <label for="{{ 'toDate-' + i }}">To Date</label>
+                        <p-calendar dateFormat="yy-mm-dd" [showIcon]="true" class="customCalender"
+                            [formControl]="datePair.get('toDate')" appendTo="body"></p-calendar>
+                    </div>
+                    <ng-container *ngIf="i > 0">
+                        <div class="field col-1">
+                            <i class="pi pi-trash deleteIcon" (click)="removeDatePair(i)"></i>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="i == 0">
+                        <div class="field col-1">
+                            <i class="pi pi-plus plusIcon" (click)="addDatePair()"></i>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-content-center w-full mt-5">
+            <button pButton label="Add" type="Submit" class="mx-3 submit-btn add-btn"></button>
+            <button pButton label="Cancel" (click)="onCancel()" type="button" class="mx-3 cancel-btn"></button>
+        </div>
+    </form>
+</p-dialog>

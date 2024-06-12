@@ -1,0 +1,160 @@
+.custom {
+  overflow: hidden;
+}
+.img {
+  position: absolute;
+  overflow: hidden;
+}
+
+.img1 {
+  left: 60%;
+    top: 0px;
+  width: 260.72px;
+  height: auto;
+}
+
+.img2 {
+  left: 5%;
+    top: 80%;
+  height: 145.34px;
+}
+
+.img3 {
+  right: 10%;
+    top: 50%;
+  height: 173.16px;
+}
+
+.img4 {
+  left: 325px;
+  bottom: 160px;
+  width: 90.39px;
+  height: 90.39px;
+}
+
+.img5 {
+  left: 265px;
+  bottom: 148px;
+  width: 164.16px;
+  height: 156.25px;
+}
+
+.img6 {
+  left: 299px;
+  bottom: 32px;
+  width: 238.73px;
+  height: 238.73px;
+}
+
+.img7 {
+  left: 249px;
+  top: 32px;
+  width: 43.56px;
+  height: 43.56px;
+}
+
+.img8 {
+  left: 37px;
+  top: 61px;
+  width: 158.36px;
+  height: 158.36px;
+}
+
+.img9 {
+  left: 50%;
+    top: 27%;
+  /* width: 204.74px; */
+  height: 165.22px;
+}
+
+.img10 {
+  left: 228px;
+  top: 212px;
+  width: 65.34px;
+  height: 65.34px;
+}
+
+.img11 {
+    left: 10%;
+    top: 36%;
+    width: 278.8px;
+    height: 278.8px;
+  }
+
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  /* Adjust styles for smaller screens if needed */
+  .img1 {
+    left: 60%;
+    top: 0px;
+    width: 30%;
+    height: auto;
+  }
+
+  .img2 {
+    left: 5%;
+    top: 80%;
+    height: 15%;
+  }
+
+  .img3 {
+    right: 10%;
+    top: 50%;
+    height: 20%;
+  }
+
+  .img4 {
+        left: 38%;
+    bottom: 20%;
+    width: 84.39px;
+    height: 84.39px;
+  }
+
+  .img5 {
+        left: 30%;
+    bottom: 20%;
+    width: 137.16px;
+    height: 135.25px;
+  }
+
+  .img6 {
+    left: 35%;
+    bottom: 5%;
+    width: 200.73px;
+    height: 199.73px;
+  }
+
+  .img7 {
+    left: 249px;
+    top: 32px;
+    width: 43.56px;
+    height: 43.56px;
+  }
+
+  .img8 {
+    left: 37px;
+    top: 61px;
+    width: 140.36px;
+    height: 140.36px;
+  }
+
+  .img9 {
+    left: 354px;
+    top: 27%;
+    /* width: 204.74px; */
+    height: 165.22px;
+  }
+
+  .img10 {
+    left: 32%;
+    top: 30%;
+    width: 65.34px;
+    height: 65.34px;
+  }
+
+  .img11 {
+        left:4%;
+    top: 37%;
+    width: 170.8px;
+    height: 170.8px;
+  }
+}

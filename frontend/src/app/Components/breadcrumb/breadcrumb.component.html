@@ -1,0 +1,8 @@
+<p-breadcrumb [model]="breadcrumbs">
+    <ng-template let-item pTemplate="item">
+        <li [ngClass]="{ 'active': item === breadcrumbs[breadcrumbs.length - 1] }">
+            <a class="custom" *ngIf="item !== breadcrumbs[breadcrumbs.length - 1]">{{ item.label }}</a>
+            <span *ngIf="item === breadcrumbs[breadcrumbs.length - 1]">{{ item.label }}</span>
+        </li>
+    </ng-template>
+</p-breadcrumb>

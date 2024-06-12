@@ -1,0 +1,24 @@
+li a, li span{
+    font-size: 23px;
+}
+
+.custom {
+  color: rgba(156, 156, 156, 1);
+  font-weight: 400;
+}
+
+.active {
+  color: rgba(78, 20, 191, 1);
+  font-weight: 700;
+  }
+
+
+::ng-deep .p-breadcrumb {
+  background: transparent !important;
+  border: none !important;
+}
+
+::ng-deep .p-breadcrumb .ui-breadcrumb-item.active {
+  background: transparent !important;
+  border: none !important;
+}
